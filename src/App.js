@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Nav from './components/Nav';
 import About from './components/About';
+import Gallery from "./components/Gallery";
 
 //asked to comment this out and start over
 // function App() {
@@ -25,11 +26,28 @@ import About from './components/About';
 // }
 // could also use const App = () => { return ()}
 function App() {
+  //time to lift gallery up a level!
+  const [categories] = useState([
+    {
+      name: 'commercial',
+      description: 'Photos of grocery stores, food trucks, and other commercial projects',
+    },
+    { name: 'portraits', description: 'Portraits of people in my life' },
+    { name: 'food', description: 'Delicious delicacies' },
+    { name: 'landscape', description: 'Fields, farmhouses, waterfalls, and the beauty of nature' },
+  ]);
+
+  const [currentCategory, setCurrentCategory] = useState(categories[0]);
   return (
     <div>
-      {/* Time to make a nav component */}
-      <Nav></Nav>
+      {/* Time to make a nav component.in 20.3 time to up gallery up a level to interact with nav better */}
+      <Nav
+        categories={categories}
+        setCurrentCategory={setCurrentCategory}
+        currentCategory={currentCategory}>
+      </Nav>
       <main>
+        <Gallery></Gallery>
         <About></About>
       </main>
     </div>
