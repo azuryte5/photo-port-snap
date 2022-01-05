@@ -1,7 +1,7 @@
 import React from 'react';
 // Main entry point for the application renders the app compenent at the root element in the html.
+import './style/index.css';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
