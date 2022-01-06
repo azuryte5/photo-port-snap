@@ -1,9 +1,11 @@
 import React, {useState} from "react";
+
 import { validateEmail } from '../../utils/helper';
 
 function ContactForm() {
     //is the ability to initialize the values of the state. In this case, we want to clear the input fields on the component loading.
     const [formState, setFormState] = useState({ name: '', email: '', message: '' });
+    
     const [errorMessage, setErrorMessage] = useState('');
     const { name, email, message } = formState;
 

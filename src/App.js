@@ -45,11 +45,10 @@ function App() {
       <Nav
         categories={categories}
         setCurrentCategory={setCurrentCategory}
-        currentCategory={currentCategory}>
-        {/* Added during 20.4 */}
+        currentCategory={currentCategory}
         contactSelected={contactSelected}
         setContactSelected={setContactSelected}
-      </Nav>
+      ></Nav>
       <main>
         {/* Out of place contact form
         <ContactForm></ContactForm>
