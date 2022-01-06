@@ -38,6 +38,7 @@ function App() {
   ]);
 
   const [currentCategory, setCurrentCategory] = useState(categories[0]);
+  const [contactSelected, setContactSelected] = useState(false);
   return (
     <div>
       {/* Time to make a nav component.in 20.3 time to up gallery up a level to interact with nav better */}
@@ -45,11 +46,23 @@ function App() {
         categories={categories}
         setCurrentCategory={setCurrentCategory}
         currentCategory={currentCategory}>
+        {/* Added during 20.4 */}
+        contactSelected={contactSelected}
+        setContactSelected={setContactSelected}
       </Nav>
       <main>
+        {/* Out of place contact form
         <ContactForm></ContactForm>
         <Gallery currentCategory={currentCategory}></Gallery>
-        <About></About>
+        <About></About> */}
+           {!contactSelected ? (
+          <>
+            <Gallery currentCategory={currentCategory}></Gallery>
+            <About></About>
+          </>
+        ) : (
+            <ContactForm></ContactForm>
+          )}
       </main>
     </div>
   );
